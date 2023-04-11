@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
+#include "keymap_estonian.h"
 
 / {
     behaviors {
@@ -17,6 +18,98 @@
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
       };
+
+      /* Mod morph behavior definitions */
+      s_1_exc: shift_1_exc_behavior {
+          compatible = "zmk,behavior-mod-morph";
+          label = "S_1_EXC";
+          #binding-cells = <0>;
+          bindings = <&kp N1>, <&kp EE_EXLM>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
+
+      s_2_at: shift_2_at_behavior {
+          compatible = "zmk,behavior-mod-morph";
+          label = "S_2_AT";
+              #binding-cells = <0>;
+
+          bindings = <&kp N2>, <&kp EE_AT>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
+
+      s_3_hash: shift_3_hash_behavior {
+          compatible = "zmk,behavior-mod-morph";
+          label = "S_3_HASH";
+              #binding-cells = <0>;
+
+          bindings = <&kp N3>, <&kp EE_HASH>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
+
+      s_4_dollar: shift_4_dollar_behavior {
+          compatible = "zmk,behavior-mod-morph";
+          label = "S_4_DOLLAR";
+              #binding-cells = <0>;
+
+          bindings = <&kp N4>, <&kp EE_DLR>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
+
+      s_5_percent: shift_5_percent_behavior {
+          compatible = "zmk,behavior-mod-morph";
+          label = "S_5_PERCENT";
+              #binding-cells = <0>;
+
+          bindings = <&kp N5>, <&kp EE_PERC>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
+
+      s_6_caret: shift_6_caret_behavior {
+          compatible = "zmk,behavior-mod-morph";
+          label = "S_6_CARET";
+              #binding-cells = <0>;
+
+          bindings = <&kp N6>, <&kp EE_CIRC>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
+
+      s_7_ampersand: shift_7_ampersand_behavior {
+          compatible = "zmk,behavior-mod-morph";
+          label = "S_7_AMPERSAND";
+              #binding-cells = <0>;
+
+          bindings = <&kp N7>, <&kp EE_AMPR>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
+
+      s_8_asterisk: shift_8_asterisk_behavior {
+          compatible = "zmk,behavior-mod-morph";
+          label = "S_8_ASTERISK";
+              #binding-cells = <0>;
+
+          bindings = <&kp N8>, <&kp EE_ASTR>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
+
+      s_9_lparen: shift_9_lparen_behavior {
+          compatible = "zmk,behavior-mod-morph";
+          label = "S_9_LPAREN";
+              #binding-cells = <0>;
+
+          bindings = <&kp N9>, <&kp EE_LPRN>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
+
+      s_0_rparen: shift_0_rparen_behavior {
+          compatible = "zmk,behavior-mod-morph";
+          label = "S_0_RPAREN";
+              #binding-cells = <0>;
+
+          bindings = <&kp N0>, <&kp EE_RPRN>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
+
+
     };
 
   keymap {
@@ -24,16 +117,16 @@
 
     default_layer {
       bindings = <
-        &kp EQUAL &kp N1      &kp N2        &kp N3         &kp N4            &kp N5 &tog 1                                                                         &mo 3 &kp N6 &kp N7         &kp N8             &kp N9        &kp N0        &kp MINUS
-        &kp TAB   &kp Q       &kp W         &kp E          &kp R             &kp T  &none                                                                          &none &kp Y  &kp U          &kp I              &kp O         &kp P         &kp BSLH
-        &kp ESC   &mt LGUI A  &mt LALT S    &mt LCTRL D    &mt LSHIFT F      &kp G  &none             &kp LCTRL &kp LALT &none &none &kp LGUI  &kp RCTRL           &none &kp H  &mt RSHIFT J   &mt RCTRL K        &mt RALT L    &mt LGUI SEMI &kp SQT
-        &kp LSHFT &kp Z       &kp X         &kp C          &kp V             &kp B           &none    &none     &kp HOME &none &none &kp PG_UP &none     &none           &kp N  &kp M          &kp COMMA          &kp DOT       &kp FSLH      &kp RSHFT
-        &mo 2     &kp GRAVE   &kp CAPS      &kp LEFT       &kp RIGHT                         &kp BSPC &kp DEL   &kp END              &kp PG_DN &kp ENTER &kp SPACE              &kp UP         &kp DOWN           &kp LBKT      &kp RBKT      &mo 2
+        &none &s_1_exc &s_2_at &s_3_hash &s_4_dollar &s_5_percent                           &tog 1 &mo 3                                                                               &s_6_caret &s_7_ampersand &s_8_asterisk &s_9_lparen &s_0_rparen &kp EE_MINS
+        &none     &kp Q       &kp W         &kp E          &hm LGUI R             &kp T  &none                                                                     &none &kp Y        &hm LGUI U          &kp I              &kp O         &kp P         &kp EE_UDIA
+        &kp ESC   &hm LGUI A  &hm LALT S    &hm LCTRL D    &hm LSHIFT F      &kp G  &none             &kp LCTRL &kp LALT &none &none &kp LGUI  &kp RCTRL           &none &kp H        &hm RSHIFT J   &hm RCTRL K        &hm RALT L    &hm LGUI  EE_ODIA &kp EE_ADIA
+        &kp LSHFT &kp Z       &kp X         &kp C          &kp V             &kp B           &none    &none     &kp HOME &none &none &kp PG_UP &none     &none           &kp N        &kp M          &kp COMMA          &kp DOT       &kp FSLH      &kp RSHFT
+        &mo 2     &kp GRAVE   &kp CAPS      &kp LEFT       &kp RIGHT                         &kp BSPC &kp  TAB  &kp END              &kp PG_DN &kp ENTER &kp SPACE                    &kp UP         &kp DOWN           &kp LBKT      &kp RBKT      &mo 2
       >;
     };
     keypad {
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &trans                                                                       &mo 3 &kp N6 &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp MINUS
+        &kp EE_1 &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &trans                                                                       &mo 3 &kp N6 &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp MINUS
         &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                        &none &kp Y  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp BSLH
         &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT &none &none &kp LGUI  &kp RCTRL           &none &kp H  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
         &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B         &none    &none     &kp HOME &none &none &kp PG_UP &none     &none           &kp N  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RSHFT
