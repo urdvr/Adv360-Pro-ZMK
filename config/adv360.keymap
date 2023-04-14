@@ -5,6 +5,64 @@
 #include <dt-bindings/zmk/backlight.h>
 #include "keymap_estonian.h"
 
+
+// #define EE_CARN GRAVE  // ˇ (dead)
+// #define EE_1    N1    // 1
+// #define EE_2    N2    // 2
+// #define EE_3    N3    // 3
+// #define EE_4    N4    // 4
+// #define EE_5    N5    // 5
+// #define EE_6    N6    // 6
+// #define EE_7    N7    // 7
+// #define EE_8    N8    // 8
+// #define EE_9    N9    // 9
+// #define EE_0    N0    // 0
+// #define EE_PLUS KC_MINS // +
+// #define EE_ACUT KC_EQL  // ´ (dead)
+// #define EE_UDIA LEFT_BRACKET // Ü
+// #define EE_OTIL RBRC // Õ
+// #define EE_ODIA SCLN // Ö
+// #define EE_ADIA QUOT // Ä
+// #define EE_QUOT NUHS // '
+// #define EE_LABK NUBS // <
+// #define EE_COMM KC_COMM // ,
+// #define EE_DOT  KC_DOT  // .
+// #define EE_MINS SLASH // -
+// #define EE_TILD LS(EE_CARN) // ~ (dead)
+// #define EE_EXLM LS(EE_1)    // !
+// #define EE_DQUO LS(EE_2)    // "
+// #define EE_HASH LS(EE_3)    // #
+// #define EE_CURR LS(EE_4)    // ¤
+// #define EE_PERC LS(EE_5)    // %
+// #define EE_AMPR LS(EE_6)    // &
+// #define EE_SLSH LS(EE_7)    // /
+// #define EE_LPRN LS(EE_8)    // (
+// #define EE_RPRN LS(EE_9)    // )
+// #define EE_EQL  LS(EE_0)    // =
+// #define EE_QUES LS(EE_PLUS) // ?
+// #define EE_GRV  LS(EE_ACUT) // ` (dead)
+// #define EE_ASTR LS(EE_QUOT) // *
+// #define EE_RABK LS(EE_LABK) // >
+// #define EE_SCLN LS(EE_COMM) // ;
+// #define EE_COLN LS(EE_DOT)  // :
+// #define EE_UNDS LS(EE_MINS) // _
+// #define EE_AT   RA(EE_2)    // @
+// #define EE_PND  RA(EE_3)    // £
+// #define EE_DLR  RA(EE_4)    // $
+// #define EE_EURO RA(EE_5)    // €
+// #define EE_LCBR RA(EE_7)    // {
+// #define EE_LBRC RA(EE_8)    // [
+// #define EE_RBRC RA(EE_9)    // ]
+// #define EE_RCBR RA(EE_0)    // }
+// #define EE_BSLS RA(EE_PLUS) // (backslash)
+// #define EE_SECT RA(EE_OTIL) // §
+// #define EE_SCAR RA(EE_S)    // š
+// #define EE_CIRC RA(EE_ADIA) // ^ (dead)
+// #define EE_HALF RA(EE_QUOT) // ½
+// #define EE_PIPE RA(EE_LABK) // |
+// #define EE_ZCAR RA(EE_Z)    // ž
+
+
 / {
     behaviors {
       #include "macros.dtsi"
@@ -19,96 +77,126 @@
           bindings = <&kp>, <&kp>;
       };
 
-      /* Mod morph behavior definitions */
-      s_1_exc: shift_1_exc_behavior {
-          compatible = "zmk,behavior-mod-morph";
-          label = "S_1_EXC";
-          #binding-cells = <0>;
-          bindings = <&kp N1>, <&kp EE_EXLM>;
-          mods = <(MOD_LSFT|MOD_RSFT)>;
-      };
+    /* Mod morph behavior definitions */
+    s_1_exc: shift_1_exc_behavior {
+        compatible = "zmk,behavior-mod-morph";
+        label = "S_1_EXC";
+        #binding-cells = <0>;
+        bindings = <&kp N1>, <&kp EE_EXLM>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+        keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 
-      s_2_at: shift_2_at_behavior {
-          compatible = "zmk,behavior-mod-morph";
-          label = "S_2_AT";
-              #binding-cells = <0>;
+    };
 
-          bindings = <&kp N2>, <&kp EE_AT>;
-          mods = <(MOD_LSFT|MOD_RSFT)>;
-      };
+    s_2_at: shift_2_at_behavior {
+        compatible = "zmk,behavior-mod-morph";
+        label = "S_2_AT";
+            #binding-cells = <0>;
 
-      s_3_hash: shift_3_hash_behavior {
-          compatible = "zmk,behavior-mod-morph";
-          label = "S_3_HASH";
-              #binding-cells = <0>;
+        bindings = <&kp N2>, <&kp EE_AT>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+        keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 
-          bindings = <&kp N3>, <&kp EE_HASH>;
-          mods = <(MOD_LSFT|MOD_RSFT)>;
-      };
+    };
 
-      s_4_dollar: shift_4_dollar_behavior {
-          compatible = "zmk,behavior-mod-morph";
-          label = "S_4_DOLLAR";
-              #binding-cells = <0>;
+    s_3_hash: shift_3_hash_behavior {
+        compatible = "zmk,behavior-mod-morph";
+        label = "S_3_HASH";
+            #binding-cells = <0>;
 
-          bindings = <&kp N4>, <&kp EE_DLR>;
-          mods = <(MOD_LSFT|MOD_RSFT)>;
-      };
+        bindings = <&kp N3>, <&kp EE_HASH>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+                keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 
-      s_5_percent: shift_5_percent_behavior {
-          compatible = "zmk,behavior-mod-morph";
-          label = "S_5_PERCENT";
-              #binding-cells = <0>;
+    };
 
-          bindings = <&kp N5>, <&kp EE_PERC>;
-          mods = <(MOD_LSFT|MOD_RSFT)>;
-      };
+    s_4_dollar: shift_4_dollar_behavior {
+        compatible = "zmk,behavior-mod-morph";
+        label = "S_4_DOLLAR";
+            #binding-cells = <0>;
 
-      s_6_caret: shift_6_caret_behavior {
-          compatible = "zmk,behavior-mod-morph";
-          label = "S_6_CARET";
-              #binding-cells = <0>;
+        bindings = <&kp N4>, <&kp EE_DLR>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+          keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 
-          bindings = <&kp N6>, <&kp EE_CIRC>;
-          mods = <(MOD_LSFT|MOD_RSFT)>;
-      };
+    };
 
-      s_7_ampersand: shift_7_ampersand_behavior {
-          compatible = "zmk,behavior-mod-morph";
-          label = "S_7_AMPERSAND";
-              #binding-cells = <0>;
+    s_5_percent: shift_5_percent_behavior {
+        compatible = "zmk,behavior-mod-morph";
+        label = "S_5_PERCENT";
+            #binding-cells = <0>;
 
-          bindings = <&kp N7>, <&kp EE_AMPR>;
-          mods = <(MOD_LSFT|MOD_RSFT)>;
-      };
+        bindings = <&kp N5>, <&kp EE_PERC>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+                keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 
-      s_8_asterisk: shift_8_asterisk_behavior {
-          compatible = "zmk,behavior-mod-morph";
-          label = "S_8_ASTERISK";
-              #binding-cells = <0>;
+    };
 
-          bindings = <&kp N8>, <&kp EE_ASTR>;
-          mods = <(MOD_LSFT|MOD_RSFT)>;
-      };
+    s_6_caret: shift_6_caret_behavior {
+        compatible = "zmk,behavior-mod-morph";
+        label = "S_6_CARET";
+            #binding-cells = <0>;
 
-      s_9_lparen: shift_9_lparen_behavior {
-          compatible = "zmk,behavior-mod-morph";
-          label = "S_9_LPAREN";
-              #binding-cells = <0>;
+        bindings = <&kp N6>, <&kp EE_CIRC>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+                keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 
-          bindings = <&kp N9>, <&kp EE_LPRN>;
-          mods = <(MOD_LSFT|MOD_RSFT)>;
-      };
+    };
 
-      s_0_rparen: shift_0_rparen_behavior {
-          compatible = "zmk,behavior-mod-morph";
-          label = "S_0_RPAREN";
-              #binding-cells = <0>;
+    s_7_ampersand: shift_7_ampersand_behavior {
+        compatible = "zmk,behavior-mod-morph";
+        label = "S_7_AMPERSAND";
+            #binding-cells = <0>;
 
-          bindings = <&kp N0>, <&kp EE_RPRN>;
-          mods = <(MOD_LSFT|MOD_RSFT)>;
-      };
+        bindings = <&kp N7>, <&kp EE_AMPR>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+                keep-mods = <(MOD_LSFT|MOD_RSFT)>;
 
+    };
+
+    s_8_asterisk: shift_8_asterisk_behavior {
+        compatible = "zmk,behavior-mod-morph";
+        label = "S_8_ASTERISK";
+            #binding-cells = <0>;
+
+        bindings = <&kp N8>, <&kp EE_ASTR>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+                keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+
+    };
+
+    s_9_lparen: shift_9_lparen_behavior {
+        compatible = "zmk,behavior-mod-morph";
+        label = "S_9_LPAREN";
+            #binding-cells = <0>;
+
+        bindings = <&kp N9>, <&kp EE_LPRN>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+                keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+
+    };
+
+    s_0_rparen: shift_0_rparen_behavior {
+        compatible = "zmk,behavior-mod-morph";
+        label = "S_0_RPAREN";
+            #binding-cells = <0>;
+
+        bindings = <&kp N0>, <&kp EE_RPRN>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+                keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+
+    };
+
+    dq_sq: double_quote_single_quote {
+        compatible = "zmk,behavior-mod-morph";
+        label = "DQSQ";
+            #binding-cells = <0>;
+
+        bindings = <&kp EE_DQUO>, <&kp EE_QUOT>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+        keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+
+    };
 
     };
 
@@ -116,7 +204,7 @@
     compatible = "zmk,keymap";
 
     default_layer {
-      bindings = <
+      bindings = <       
         &none &s_1_exc &s_2_at &s_3_hash &s_4_dollar &s_5_percent                           &tog 1 &mo 3                                                                               &s_6_caret &s_7_ampersand &s_8_asterisk &s_9_lparen &s_0_rparen &kp EE_MINS
         &none     &kp Q       &kp W         &kp E          &hm LGUI R             &kp T  &none                                                                     &none &kp Y        &hm LGUI U          &kp I              &kp O         &kp P         &kp EE_UDIA
         &kp ESC   &hm LGUI A  &hm LALT S    &hm LCTRL D    &hm LSHIFT F      &kp G  &none             &kp LCTRL &kp LALT &none &none &kp LGUI  &kp RCTRL           &none &kp H        &hm RSHIFT J   &hm RCTRL K        &hm RALT L    &hm LGUI  EE_ODIA &kp EE_ADIA
