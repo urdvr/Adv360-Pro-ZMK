@@ -91,8 +91,7 @@
     s_2_at: shift_2_at_behavior {
         compatible = "zmk,behavior-mod-morph";
         label = "S_2_AT";
-            #binding-cells = <0>;
-
+        #binding-cells = <0>;
         bindings = <&kp N2>, <&kp EE_AT>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
         keep-mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -135,12 +134,10 @@
     s_6_caret: shift_6_caret_behavior {
         compatible = "zmk,behavior-mod-morph";
         label = "S_6_CARET";
-            #binding-cells = <0>;
-
+        #binding-cells = <0>;
         bindings = <&kp N6>, <&kp EE_CIRC>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
-                keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-
+        keep-mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
     s_7_ampersand: shift_7_ampersand_behavior {
@@ -223,10 +220,10 @@
     };
     fn {
       bindings = <
-        &trans &kp F1 &kp F2 &kp F3 &kp F4 &kp F5  &tog 1                                                       &mo 3 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 
-        &trans &trans &trans &trans &trans &trans  &none                                                       &none &trans &trans &trans &trans  &trans  &kp F12
-        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &none &none &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none        &trans &trans &trans &trans  &trans  &trans
+        &trans &kp F1 &kp F2 &kp F3 &kp F4 &kp F5  &tog 1                                                      &mo 3 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 
+        &trans &trans &trans &trans &trans &trans  &none                                                       &none &kp EE_EQL &kp EE_RBRC &kp EE_LBRC &trans  &trans  &kp F12
+        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &none &none &trans &trans        &none &kp EE_SLSH &kp EE_RPRN &kp EE_LPRN &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none        &trans &trans &kp EE_LCBR &kp EE_RCBR  &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans              &trans &trans &trans  &trans  &trans
       >;
     };
