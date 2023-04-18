@@ -38,6 +38,47 @@
 #define QUESTION (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_SLASH_AND_QUESTION_MARK))
 #define SLASH RA(N1)
 
+#define HYPER LS(LC(LA(LEFT_GUI)))
 
 //pycharm
 #define RUN_CURRENT_FILE LC(LS(F10))
+#define RUN_PREV LC(LS(F9))
+
+// #define LC(keycode) APPLY_MODS(MOD_LCTL, keycode)
+// #define LS(keycode) APPLY_MODS(MOD_LSFT, keycode)
+// #define LA(keycode) APPLY_MODS(MOD_LALT, keycode)
+// #define LG(keycode) APPLY_MODS(MOD_LGUI, keycode)
+// #define RC(keycode) APPLY_MODS(MOD_RCTL, keycode)
+// #define RS(keycode) APPLY_MODS(MOD_RSFT, keycode)
+// #define RA(keycode) APPLY_MODS(MOD_RALT, keycode)
+// #define RG(keycode) APPLY_MODS(MOD_RGUI, keycode)
+
+//workspace
+#define WS_1 LG(N1)
+#define WS_2 LG(N2)
+#define WS_3 LG(N3)
+#define WS_4 LG(N4)
+#define WS_5 LG(N5)
+#define WS_6 LG(N6)
+#define WS_7 LG(N7)
+#define WS_8 LG(N8)
+#define WS_9 LG(N9)
+#define WS_10 LG(N0)
+
+// Move window to workspace 1 - 10
+#define MOVE_WS1 LG(LS(N1))
+#define MOVE_WS2 LG(LS(N2))
+#define MOVE_WS3 LG(LS(N3))
+#define MOVE_WS4 LG(LS(N4))
+#define MOVE_WS5 LG(LS(N5))
+#define MOVE_WS6 LG(LS(N6))
+#define MOVE_WS7 LG(LS(N7))
+#define MOVE_WS8 LG(LS(N8))
+#define MOVE_WS9 LG(LS(N9))
+#define MOVE_WS10 LG(LS(N0))
+
+
+#define FOCUS_LEFT  LG(LEFT)
+#define FOCUS_RIGHT LG(RIGHT)
+#define FOCUS_UP    LG(UP)
+#define FOCUS_DOWN  LG(DOWN)
