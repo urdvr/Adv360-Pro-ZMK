@@ -42,7 +42,9 @@
 
 //pycharm
 #define RUN_CURRENT_FILE LC(LS(F10))
-#define RUN_PREV LC(LS(F9))
+#define RUN_PREV LS(10)
+
+#define PASTE_CLIPBOARD LS(INSERT)
 
 // #define LC(keycode) APPLY_MODS(MOD_LCTL, keycode)
 // #define LS(keycode) APPLY_MODS(MOD_LSFT, keycode)
@@ -65,6 +67,7 @@
 #define WS_9 LG(N9)
 #define WS_10 LG(N0)
 
+//i3
 // Move window to workspace 1 - 10
 #define MOVE_WS1 LG(LS(N1))
 #define MOVE_WS2 LG(LS(N2))
@@ -82,3 +85,5 @@
 #define FOCUS_RIGHT LG(RIGHT)
 #define FOCUS_UP    LG(UP)
 #define FOCUS_DOWN  LG(DOWN)
+
+#define MOVE_TO_NEXT_MONITOR LG(LS(E))
