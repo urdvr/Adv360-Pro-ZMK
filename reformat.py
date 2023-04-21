@@ -19,7 +19,16 @@ def format_keybinding(keymap):
     keymap[4] = keymap[4][:10] + [None] * 2 + keymap[4][10:]
     keymap[4] = keymap[4][:15] + [None] * 2 + keymap[4][15:]
 
-    assert len(set([len(x) for x in keymap])) == 1
+    all_rows_equal = len(set([len(x) for x in keymap])) == 1
+    if not all_rows_equal:
+        #print row that has different length from others
+        row_lens = [len(x) for x in keymap]
+
+        for i, row in enumerate(keymap):
+            if len(row) != max(row_lens):
+                print("Row {} has different length from others".format(i))
+                print(row)
+        assert 0
 
     num_cols = len(keymap[0])
     col_widths = [0] * num_cols
