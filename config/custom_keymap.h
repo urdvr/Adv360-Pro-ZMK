@@ -26,8 +26,8 @@
 // Aliases mapped to my custom xkb layout
 #define UDIA RA(U)
 #define ADIA RA(A)
-#define OTIL RA(I)
-#define ODIA RA(O)
+#define OTIL RA(Q)
+#define ODIA RA(W)
 
 #define LESS RA(COMMA)
 #define GREATER RA(DOT)
@@ -35,16 +35,31 @@
 #define SEMI  LS(COMMA)
 
 
-#define QUESTION (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_SLASH_AND_QUESTION_MARK))
+#define SLSH_QUEST (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_SLASH_AND_QUESTION_MARK))
 #define SLASH RA(N1)
 
 #define HYPER LS(LC(LA(LEFT_GUI)))
+#define COMMANDBAR LC(LS(A)) //command sft a 
+
+//copy paste cut undo
+#define COPY LC(C)
+#define PASTE LC(V)
+#define CUT LC(X)
+#define UNDO LC(Z)
+
 
 //pycharm
 #define RUN_CURRENT_FILE LC(LS(F10))
-#define RUN_PREV LS(10)
+#define RUN_PREV LS(F10)
+#define DEBUG LS(F9)
+#define MOVE_CARET_TO_MATCHING_BRACE LC(LS(M))
+
+
+
 
 #define PASTE_CLIPBOARD LS(INSERT)
+#define CLOSE_TAB LC(W)
+#define OPEN_TERMINAL F12
 
 // #define LC(keycode) APPLY_MODS(MOD_LCTL, keycode)
 // #define LS(keycode) APPLY_MODS(MOD_LSFT, keycode)

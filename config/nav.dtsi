@@ -76,3 +76,57 @@ tdws10: tdws10 {
     tapping-term-ms = <200>;
     bindings = <&kp WS_10>, <&kp MOVE_WS10>;
 };
+
+
+y_paste: y_paste {
+    compatible = "zmk,behavior-tap-dance";
+    label = "y_paste";
+    #binding-cells = <0>;
+    tapping-term-ms = <200>;
+    bindings = <&kp Y>, <&kp PASTE_CLIPBOARD>;
+};
+
+//cc to copy
+c_copy: c_copy {
+    compatible = "zmk,behavior-tap-dance";
+    label = "c_copy";
+    #binding-cells = <0>;
+    tapping-term-ms = <200>;
+    bindings = <&kp C>, <&kp COPY>;
+};
+
+//vv to paste
+v_paste: v_paste {
+    compatible = "zmk,behavior-tap-dance";
+    label = "v_paste";
+    #binding-cells = <0>;
+    tapping-term-ms = <200>;
+    bindings = <&kp V>, <&kp PASTE>;
+};
+
+//xx to cut
+x_cut: x_cut {
+    compatible = "zmk,behavior-tap-dance";
+    label = "x_cut";
+    #binding-cells = <0>;
+    tapping-term-ms = <200>;
+    bindings = <&kp X>, <&kp CUT>;
+};
+//zz to undo
+z_undo: z_undo {
+    compatible = "zmk,behavior-tap-dance";
+    label = "z_undo";
+    #binding-cells = <0>;
+    tapping-term-ms = <200>;
+    bindings = <&kp Z>, <&kp UNDO>;
+};
+
+
+//close tab on double w
+w_close_tab: w_close_tab {
+    compatible = "zmk,behavior-tap-dance";
+    label = "w_close_tab";
+    #binding-cells = <0>;
+    tapping-term-ms = <200>;
+    bindings = <&kp W>, <&kp CLOSE_TAB>;
+};
