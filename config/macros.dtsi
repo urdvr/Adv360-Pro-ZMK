@@ -5,3 +5,12 @@ run_py: run_py {
     tapping-term-ms = <200>;
     bindings = <&kp RUN_PREV>, <&kp RUN_CURRENT_FILE>, <&kp DEBUG>;
 };
+
+//go to the main screens on my laptop
+gohome: gohome {
+    compatible = "zmk,behavior-tap-dance";
+    label = "gohome";
+    #binding-cells = <0>;
+    tapping-term-ms = <200>;
+    bindings = <&kp OTIL>, <&kp LG(LC(LS(Z)))>;
+};
