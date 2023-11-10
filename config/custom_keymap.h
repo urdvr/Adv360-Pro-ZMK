@@ -34,6 +34,8 @@
 #define COLON LS(DOT)
 #define SEMI  LS(COMMA)
 #define DOUBLEQUOTE LS(APOSTORPHE)
+#define STAR LS(N8)
+#define BANG LS(N1)
 
 
 #define SLSH_QUEST (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_SLASH_AND_QUESTION_MARK))
@@ -95,6 +97,9 @@
 #define MOVE_WS8 LG(LS(N8))
 #define MOVE_WS9 LG(LS(N9))
 #define MOVE_WS10 LG(LS(N0))
+
+
+#define GOHOME LG(LC(LS(Z)))
 
 
 #define FOCUS_LEFT  LG(LEFT)
