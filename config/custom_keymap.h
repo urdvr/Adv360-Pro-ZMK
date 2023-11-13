@@ -108,3 +108,7 @@
 #define FOCUS_DOWN  LG(DOWN)
 
 #define MOVE_TO_NEXT_MONITOR LG(LS(E))
+
+
+
+#define OPEN_ROFI LG(F10)
